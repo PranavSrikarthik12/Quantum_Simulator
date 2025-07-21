@@ -7,9 +7,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import base64
-from io import BytesIO
+from io import BytesIO  
 
 app = Flask(__name__)
+app.jinja_env.cache = {}  # 🚫 Disable Jinja2 template caching
 
 def fig_to_base64(fig):
     buf = BytesIO()
